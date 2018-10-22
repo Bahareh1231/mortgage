@@ -28,10 +28,14 @@ export class QuestionsComponent implements OnInit {
     // this.data$ = this.data.data;
   } // end of gnOnInit
 
+  log = (x) => {
+    console.log(x)
+  }
+
 
   onEvents = (submission) => {
     this.creditScore = submission.value.creditScore;
-    this.yourAge = submission.value.age;
+    this.yourAge = submission.value.yourAge;
 
     this.data.data.forEach((item) => {
       if (this.creditScore === item.score && this.yourAge === item.age) {

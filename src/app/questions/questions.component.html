@@ -5,7 +5,7 @@
   <h2>an easy way to find your rates.</h2>
 
 </header>
-<form #userForm="ngForm" (ngSubmit)="onEvents(userForm)" class="wrapper" >
+<form #userForm="ngForm" (ngSubmit)="onEvents(userForm) ; log(userForm)" class="wrapper" >
    <!-- *ngIf="userForm.submitted === false" -->
 
 <div  class="formBody">
@@ -18,26 +18,26 @@
 
   
 
-  <div class="age question" id="this.yourAge">
+  <div class="age question" id="yourAge">
     <p>Age:</p>
     <div class="box">
       <div class="block">
-        <input required [(ngModel)]="this.yourAge" type="radio" id="1830" value="1830" name="this.yourAge">
+        <input required [(ngModel)]="yourAge" type="radio" id="1830" value="1830" name="yourAge">
         <label aria-label="select if between the ages of 18 to 30" for="1830">18 - 30</label>
       </div>
 
       <div class="block">
-        <input required [(ngModel)]="this.yourAge" type="radio" id="3045" value="3045" name="this.yourAge">
+        <input required [(ngModel)]="yourAge" type="radio" id="3045" value="3045" name="yourAge">
         <label aria-label="select if between the ages of 30 to 45" for="3045">30 - 45</label>
       </div>
 
       <div class="block">
-        <input required [(ngModel)]="this.yourAge" type="radio" id="4560" value="4560" name="this.yourAge">
+        <input required [(ngModel)]="yourAge" type="radio" id="4560" value="4560" name="yourAge">
         <label aria-label="select if between the ages of 45 to 60" for="4560">45 - 60</label>
       </div>
 
       <div class="block">
-        <input required [(ngModel)]="this.yourAge" type="radio" id="60"  value="60" name="this.yourAge">
+        <input required [(ngModel)]="yourAge" type="radio" id="60"  value="60" name="yourAge">
         <label aria-label="select if over the age of 60" for="60">60+</label>
       </div>
 
@@ -55,27 +55,27 @@
 
     <div class="box">
       <div class="block">
-        <input required [(ngModel)]="this.creditScore" value="poor" name="this.creditScore" type="radio" id="poor">
+        <input required [(ngModel)]="creditScore" value="poor" name="creditScore" type="radio" id="poor">
         <label aria-label="select if your credit score is between 300 and 619" for="poor">300 - 619</label>
       </div>
 
       <div class="block">
-        <input required [(ngModel)]="this.creditScore" value="fair" name="this.creditScore" type="radio" id="fair">
+        <input required [(ngModel)]="creditScore" value="fair" name="creditScore" type="radio" id="fair">
         <label aria-label="select if your credit score is between 620 and 659" for="fair">620 - 659</label>
       </div>
 
       <div class="block">
-        <input required [(ngModel)]="this.creditScore" value="good" name="this.creditScore" type="radio" id="good">
+        <input required [(ngModel)]="creditScore" value="good" name="creditScore" type="radio" id="good">
         <label aria-label="select if your credit score is between 660 and 719" for="good">660 - 719</label>
       </div>
 
       <div class="block">
-        <input required [(ngModel)]="this.creditScore" value="great" name="this.creditScore" type="radio" id="great">
+        <input required [(ngModel)]="creditScore" value="great" name="creditScore" type="radio" id="great">
         <label aria-label="select if your credit score is between 720 and 749" for="great">720 - 749</label>
       </div>
 
       <div class="block">
-        <input required [(ngModel)]="this.creditScore" value="excellent" name="this.creditScore" type="radio" id="excellent">
+        <input required [(ngModel)]="creditScore" value="excellent" name="creditScore" type="radio" id="excellent">
         <label aria-label="select if your credit score is between 750 and 850" for="excellent">750 - 850</label>
       </div>
 
@@ -87,20 +87,20 @@
 
   <div *ngIf="userForm.submitted && !userForm.value.fullName 
   || userForm.submitted &&!userForm.value.creditScore
-   || userForm.submitted &&!userForm.value.resident|| userForm.submitted &&!userForm.value.age" class="fillAll"><p>**Please fill in all the fields (you must be a permanent resident or citizen)</p></div>
+   || userForm.submitted &&!userForm.value.resident|| userForm.submitted &&!userForm.value.yourAge" class="fillAll"><p>**Please fill in all the fields (you must be a permanent resident or citizen)</p></div>
 
   </div>
 </form><!-- end of form-->
 
 <footer class="results" id="footer">
 <div class="wrapper" *ngIf="userForm.submitted && userForm.value.fullName &&userForm.value.creditScore
-&& userForm.value.resident && userForm.value.age && this.yourRate">
+&& userForm.value.resident && userForm.value.yourAge && this.yourRate">
 Hello {{userForm.value.fullName}}! Your mortgage rate is: <span class="bold"> {{ ' ' + this.yourRate }}</span>.
 </div>
 
   
   <div class="wrapper" *ngIf="userForm.submitted && userForm.value.fullName &&userForm.value.creditScore
-  && userForm.value.resident && userForm.value.age !== 018 && !this.yourRate">
+  && userForm.value.resident && !this.yourRate">
    <p> Hi, {{userForm.value.fullName}}! We cannot give you a rate at this time. Please call our offices and we would love to discuss
     your options with you.</p>
   </div><!-- end of wrapper-->
