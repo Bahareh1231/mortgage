@@ -1,0 +1,110 @@
+form {
+    padding: 50px;
+}
+
+.formBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.question {
+    min-height: 30vh;
+    border-bottom: 1px $darkGrey solid;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+    width: 100%;
+    text-align: center;
+    label {
+        margin: 0 10px;
+    }  
+}
+
+.name {
+    flex-direction: row;
+}
+
+.resident {
+    flex-direction: row;
+}
+
+
+.box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2 0px;
+}
+
+.block {
+    padding: 10px;
+}
+
+p { 
+    margin: 0;
+}
+
+p,
+label {
+    font-size: 1.5rem;
+}
+
+input {
+    border: 1px solid $darkGrey;
+    padding: 10px 30px;
+}
+
+.age input,
+.resident input,
+.credit input {
+    display: none;
+}
+
+input {
+    &:checked + label {
+        font-weight: 700;
+    }
+    
+}
+
+.resident input[type=checkbox] {
+    &:checked + label {
+        font-weight: 700;
+    }
+    
+}
+
+.button {
+    background: $lightGreen;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.fillAll {
+    margin-top: 30px;
+}
+
+//media Queries
+
+@media (max-width: 550px) {
+    .name {
+        flex-direction: column;
+        label {
+            margin-bottom: 10px;
+        }
+    }
+
+    .resident {
+        padding-left: 0;
+        padding-right: 0;
+        label {
+        font-size: 1.3rem;
+        }
+    }
+}

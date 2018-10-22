@@ -1,0 +1,17 @@
+footer {
+    height: 50vh;
+    .wrapper {
+        height: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+//media queries
+@media(max-width: 500px) {
+    footer .wrapper {
+        font-size: 1.3rem;
+    }
+}

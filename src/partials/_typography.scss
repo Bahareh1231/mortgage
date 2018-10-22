@@ -1,0 +1,26 @@
+html {
+    font-family: $font;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    max-width: 800px;
+    width: 65%;
+    margin: 0 auto;
+    border: 1px $darkGrey solid;
+    padding: 50px;
+}
+
+.bold {
+    font-weight: 700;
+    margin-left: 7px;
+}
+
+// Media queries
+
+@media (max-width: 900px) {
+    .wrapper {
+        width: 90%;
+    }
+}
